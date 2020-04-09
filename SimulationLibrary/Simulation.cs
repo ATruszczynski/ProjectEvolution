@@ -22,18 +22,21 @@ namespace SimulationLibrary
             Map = new Map(10, 10, new List<int>() { 1, 8, 1 });
             Actions = new List<ActionA>();
 
-            Actions.Add(new MoveAction(N));
-            Actions.Add(new MoveAction(NW));
-            Actions.Add(new MoveAction(W));
-            Actions.Add(new MoveAction(SW));
-            Actions.Add(new MoveAction(S));
-            Actions.Add(new MoveAction(SE));
-            Actions.Add(new MoveAction(E));
-            Actions.Add(new MoveAction(NE));
+            Actions.Add(new MoveAction(1,0));
+            Actions.Add(new MoveAction(1,1));
+            Actions.Add(new MoveAction(0,1));
+            Actions.Add(new MoveAction(-1,1));
+            Actions.Add(new MoveAction(-1,0));
+            Actions.Add(new MoveAction(-1,-1));
+            Actions.Add(new MoveAction(0,-1));
+            Actions.Add(new MoveAction(1,-1));
 
             Blobs = new List<Blob>();
-            Blobs.Add(new Blob(Map, Map[0,0], Actions));
-            Blobs.Add(new Blob(Map, Map[9,9],Actions));
+
+            Blob b = new Blob(Actions);
+            Map.PlaceBlob(b, 5, 5);
+            Blobs.Add(b);
+
             TursLeft = turnsLeft;
             for (; TursLeft > 0; TursLeft--)
             {

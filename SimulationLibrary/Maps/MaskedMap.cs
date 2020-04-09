@@ -13,8 +13,8 @@ namespace SimulationLibrary.Maps
         public MaskedMap(Map map)
         {
             Map = map;
+            Visibility = new bool[Map.Tiles.GetLength(0), Map.Tiles.GetLength(1)];
         }
-
 
         public void Reveal(int w, int h)
         {
@@ -26,7 +26,7 @@ namespace SimulationLibrary.Maps
                 {
                     if (wi >= 0 && wi < mw && hi >= 0 && hi < mh)
                     {
-
+                        Visibility[wi, hi] = true;
                     }
                 }
             }

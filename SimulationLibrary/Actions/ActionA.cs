@@ -10,8 +10,8 @@ namespace SimulationLibrary.Actions
 {
     abstract class ActionA
     {
-        abstract public bool IsDoable(Map map, List<Blob> blobs);
-        abstract public void Attempt(Map map, List<Blob> blobs);
-        abstract public int CalculateAffinity(Map map, List<Blob> blobs);
+        abstract public bool IsDoable(MaskedMap map, List<Blob> blobs);
+        abstract public void Attempt(MaskedMap map, List<Blob> blobs);
+        abstract public int CalculateAffinity(MaskedMap map, List<Blob> blobs);
     }
 }

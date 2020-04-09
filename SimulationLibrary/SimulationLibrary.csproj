@@ -43,16 +43,19 @@
   <ItemGroup>
     <Compile Include="Actions\ActionA.cs" />
     <Compile Include="Actions\MoveAction.cs" />
-    <Compile Include="Actions\MoveDirection.cs" />
+    <Compile Include="Actions\PickUp.cs" />
     <Compile Include="Blobs\Blob.cs" />
     <Compile Include="Features\Genome.cs" />
     <Compile Include="Maps\Map.cs" />
     <Compile Include="Maps\MaskedMap.cs" />
     <Compile Include="Maps\Tile.cs" />
     <Compile Include="Maps\TileType.cs" />
+    <Compile Include="Placeables\Food.cs" />
+    <Compile Include="Placeables\Placeable.cs" />
     <Compile Include="Rolls\ThresholdDice.cs" />
     <Compile Include="Simulation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility\Vector2D.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -58,6 +58,7 @@ namespace SimulationLibrary.Maps
             }
             Tiles[w, h].Blobs.Add(blob);
             blob.Tile = Tiles[w, h];
+            blob.Map.Reveal(w, h);
         }
 
         public Tile this[int w, int h]

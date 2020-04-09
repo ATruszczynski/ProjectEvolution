@@ -16,16 +16,16 @@ namespace SimulationLibrary.Blobs
         public Genome Genome { get; set; }
         public List<ActionA> History { get; set; }
         public List<ActionA> PossibleMoves { get; set; }
-        public Blob(Map map, Tile tile, List<ActionA> actions)
+        public Blob(List<ActionA> actions)
         {
-            Map = new MaskedMap(map);
-            Tile = tile;
             PossibleMoves = actions;
             History = new List<ActionA>();
         }
         public void MakeMove()
         {
-            Console.WriteLine("Move");
+            Random r = new Random();
+            var choice = r.Next(8);
+            PossibleMoves[choice].Attempt(Map, new List<Blob>() { this });
         }
     }
 }
