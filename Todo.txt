@@ -1,3 +1,4 @@
 <Map> Accessors to Tiles' dimensions
 <Blob> Accessing coordinates?
 Placing in placeables?
+One random everywhere?	

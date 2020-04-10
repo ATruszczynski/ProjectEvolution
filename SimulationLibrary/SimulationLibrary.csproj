@@ -43,8 +43,10 @@
   <ItemGroup>
     <Compile Include="Actions\ActionA.cs" />
     <Compile Include="Actions\MoveAction.cs" />
-    <Compile Include="Actions\PickUp.cs" />
+    <Compile Include="Actions\EatAction.cs" />
+    <Compile Include="Actions\Procreate1Action.cs" />
     <Compile Include="Blobs\Blob.cs" />
+    <Compile Include="Features\Affinities.cs" />
     <Compile Include="Features\Genome.cs" />
     <Compile Include="Maps\Map.cs" />
     <Compile Include="Maps\MaskedMap.cs" />
@@ -55,6 +57,9 @@
     <Compile Include="Rolls\ThresholdDice.cs" />
     <Compile Include="Simulation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Strategies\Strategy.cs" />
+    <Compile Include="Utility\IDeepCopyable.cs" />
+    <Compile Include="Utility\Procreator.cs" />
     <Compile Include="Utility\Vector2D.cs" />
   </ItemGroup>
   <ItemGroup />

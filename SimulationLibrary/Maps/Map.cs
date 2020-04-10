@@ -1,4 +1,5 @@
 ﻿using SimulationLibrary.Blobs;
+using SimulationLibrary.Placeables;
 using SimulationLibrary.Rolls;
 using System;
 using System.Collections.Generic;
@@ -12,8 +13,12 @@ namespace SimulationLibrary.Maps
     class Map
     {
         public Tile[,] Tiles { get; set; }
+        public int W { get { return Tiles.GetLength(0); } }
+        public int H { get { return Tiles.GetLength(1); } }
+        public List<Blob> Blobs { get; set; }
         public Map(int w, int h)
         {
+            Blobs = new List<Blob>();
             Tiles = new Tile[w, h];
             for (int wi = 0; wi < w; wi++)
             {
@@ -56,9 +61,16 @@ namespace SimulationLibrary.Maps
             {
                 blob.Tile.Blobs.Remove(blob);
             }
+            Blobs.Add(blob);
             Tiles[w, h].Blobs.Add(blob);
             blob.Tile = Tiles[w, h];
             blob.Map.Reveal(w, h);
+        }
+
+        public void RemoveBlob(Blob blob)
+        {
+            blob.Tile.Blobs.Remove(blob);
+            Blobs.Remove(blob);
         }
 
         public Tile this[int w, int h]
@@ -66,6 +78,18 @@ namespace SimulationLibrary.Maps
             get
             {
                 return Tiles[w, h];
+            }
+        }
+
+        public void PlaceFood(int howMany)
+        {
+            Random random = new Random();
+            for (int i = 0; i < howMany; i++)
+            {
+                var w = random.Next(W);
+                var h = random.Next(H);
+
+                Tiles[w, h].Placeables.Add(new Food());
             }
         }
     }

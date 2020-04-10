@@ -8,11 +8,17 @@ using System.Threading.Tasks;
 
 namespace SimulationLibrary.Actions
 {
-    class PickUp : ActionA
+    class Procreate1Action : ActionA
     {
         public override void Attempt(MaskedMap map, List<Blob> blobs)
         {
-            throw new NotImplementedException();
+            var blob = blobs[0];
+            map.Map.RemoveBlob(blob);
+
+            Random random = new Random();
+            random.Next(2);
+
+            
         }
 
         public override int CalculateAffinity(MaskedMap map, List<Blob> blobs)
